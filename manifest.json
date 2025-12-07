@@ -9,15 +9,33 @@
 		"96": "icons/96.png"
 	},
 
-	"permissions": ["webRequest", "webRequestBlocking", "<all_urls>", "storage"],
+	"permissions": [
+		"webRequest",
+	 "webRequestBlocking",
+	 "<all_urls>",
+	 "storage",
+		"data_collection_permissions"
+	],
 
 	"background": {
-		"scripts": ["shortcuts.js", "background.js"]
+		"scripts": [
+			"shortcuts.js",
+		 "background.js"
+		]
 	},
 
 	"browser_action": {
 		"default_icon": "icons/48.png",
 		"default_title": "Teleportr",
 		"default_popup": "popup.html"
-	}
+	},
+
+	"browser_specific_settings": {
+    "gecko": {
+      "id": "@teleportr-redirection",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
 }
